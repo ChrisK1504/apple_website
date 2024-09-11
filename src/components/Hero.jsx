@@ -1,7 +1,7 @@
 import gsap from 'gsap';
-import { useGsap } from '@gsap/react'
+import { useGSAP } from '@gsap/react'
 const Hero = () => {
-    useGsap(() => {
+    useGSAP(() => {
         gsap.to('#hero', { opacity: 1, delay: 1.5})
     }, [])
     return (
