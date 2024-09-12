@@ -1,8 +1,10 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ModelView from "./ModelView"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { yellowImg } from "../utils"
+
+import * as THREE from 'THREE'
 
 const Model = () => {
   const [size, setSize] = useState('small');
@@ -11,6 +13,13 @@ const Model = () => {
     color: ['#8f8A81', '#FFE789', '#6F6C64'],
     img: yellowImg,
   })
+  // camera control
+  const cameraControlSmall = useRef();
+  const cameraControllLarge = useRef();
+
+  const small = useRef(new THREE.Group());
+  const large = useRef(new THREE.Group());
+  
   useGSAP(() => {
     gsap.to('#heading', {
       opacity: 1,
