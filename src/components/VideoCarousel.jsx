@@ -5,7 +5,7 @@ import gsap from "gsap";
 const VideoCarousel = () => {
   const videoRef = useRef([]);
   const videoSpanRef = useRef([]);
-  const videoDivRef = userRef([]);
+  const videoDivRef = useRef([]);
 
   const [video, setVideo] = useState({
     isEnd: false,
