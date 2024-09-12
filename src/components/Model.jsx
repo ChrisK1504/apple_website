@@ -17,9 +17,14 @@ const Model = () => {
   const cameraControlSmall = useRef();
   const cameraControllLarge = useRef();
 
+  // model
   const small = useRef(new THREE.Group());
   const large = useRef(new THREE.Group());
-  
+
+  // rotation
+  const [smallRotation, setSmallRotation] = useState(0);
+  const [largeRotation, setLargeRotation] = useState(0);
+
   useGSAP(() => {
     gsap.to('#heading', {
       opacity: 1,
@@ -35,7 +40,24 @@ const Model = () => {
         </h1>
         <div className="flex flex-col item-center mt-5">
           <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
-            <ModelView />
+            <ModelView 
+              index={1}
+              groupRef={small}
+              gsapType="view1"
+              controlRef={cameraControlSmall}
+              setRotationState={setSmallRotation}
+              item={model}
+              size={size}
+              />
+            <ModelView 
+              index={2}
+              groupRef={large}
+              gsapType="view2"
+              controlRef={cameraControllLarge}
+              setRotationState={setLargeRotation}
+              item={model}
+              size={size}
+              />
           </div>
         </div>
       </div>

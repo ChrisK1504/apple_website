@@ -1,6 +1,6 @@
 const ModelView = () => {
   return (
-    <div></div>
+    <div>ModelView</div>
   )
 }
 
