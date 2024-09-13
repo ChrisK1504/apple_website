@@ -1,5 +1,5 @@
 import { PerspectiveCamera, View } from "@react-three/drei"
-
+import Lights from './Lights'
 const ModelView = ({index, groupRef, gsapType,
   ControlRef, setRotationSize, size, item
 }) => {
@@ -14,6 +14,8 @@ const ModelView = ({index, groupRef, gsapType,
       <ambientLight intensity={0.3} />
 
       <PerspectiveCamera makeDefault position={[0,0,4]} />
+
+      <Lights />
     </View>
   )
 }
